@@ -23,7 +23,7 @@ msg['FileName']:文件名字，如果是自带的表情就会显示表情
     itchat.send_file(path.decode(,utf-8,))
 '''
 
-text = "欢迎使用柴小运机器人，使用说明如下：\n" \
+text = "欢迎使用机器人，使用说明如下：\n" \
        "基本功能：聊天对话、问答百科、生活百科、星座运势、新闻资讯、菜谱、查快递、中英互译、数字计算、" \
        "讲故事、脑筋急转弯、绕口令、成语接龙、实时路况、天气查询等等，更多功能正在完善，其它功能如下：\n" \
        "    1、回复'#':查看帮助信息\n" \
@@ -43,8 +43,6 @@ def getFriendName(user_ID):  # 根据发送者的ID找到对应的昵称
 def reply_text(msg):
     from_text = msg['Text']
     user_name_ID = msg['FromUserName']
-    if getFriendName(user_name_ID) == '马富强':
-        return
     if msg['ToUserName'] == 'filehelper':
         if from_text == '#':
             itchat.send(text, 'filehelper')
